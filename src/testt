@@ -1,0 +1,41 @@
+
+function Formserializer(form) {
+  return Object.formEntries(
+      Object.values(form)
+      .filter(({value,name})=>
+      typeof value !== "undefined" &&
+      name)
+      .map(({name,value})=>
+      [name,value])
+
+  );
+}
+
+import React from 'react';
+import Form from './Form';
+import Formserializer from '../App';
+
+
+const getmovies =(e)=>{
+    e.preventDefault();
+    const {moveis} = Formserializer(e.currentTarget);
+    console.log(moveis)
+}
+
+export default getmovies;
+
+
+  function App () {
+    const [moveis, setgetmoveis] = React.useState("");
+  
+  function getmoveis(){
+      setgetmoveis(moveis)
+    }
+
+    return (
+      <div className="App">
+        <Form   />
+        <Movies />
+      </div>
+    );
+  }

@@ -1,0 +1,22 @@
+ <Header/>
+        <Video_Header/>
+        <VideoSlider videoId='d9M3j5d0Kb' />
+        <Margin/>
+        <Jquery/>
+        <Margin/>
+        <Form getMovie={this.getMovie}/>
+        
+        <Movie
+                poster_path={this.state.poster_path}
+                overview={this.state.overview}
+                release_date={this.state.release_date}
+                runtime={this.state.runtime}
+                vote_average={this.state.vote_average}
+                moveis={this.state.moveis}
+                error={this.state.error}
+        />
+        <Margin/>
+        <Body_Photo/>
+        <Margin/>
+        <Myclient/>
+        

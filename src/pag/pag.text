@@ -1,0 +1,55 @@
+import React , {Component} from 'react';
+import Form from './Component/Form';
+import Moveis from './Component/Moveis';
+
+
+
+//https://api.themoviedb.org/3/movie/550?api_key=ca4470d2849351d7450ee6ae2bbd8a22
+//const APIkye="ca4470d2849351d7450ee6ae2bbd8a22";
+
+class App extends Component {
+  
+  
+  getMoveis = (e) => {
+    e.preventDefault()
+    //const movei = e.target.elements.moveis.value;
+    //const api = await fetch(`https://api.themoviedb.org/3/movie/550?api_key=ca4470d2849351d7450ee6ae2bbd8a22`)
+    //const data = await api.json();
+    console.log("movei");
+  }
+
+  render() {
+    return (
+      <div className="App" >
+        <Form getMoveis={this.getMoveis} />
+        <Moveis/>
+
+      </div>
+    );
+  }
+}
+ 
+  
+export default App;
+
+
+
+
+
+
+
+
+
+import React from 'react'
+
+
+const Form = (props) => {
+        return (
+            <form  >
+                <input type="text" placeholder="moveis name..." />
+                <button onSubmit={props.getMoveis}  >search</button>
+            </form>
+        )
+}
+
+export default Form ;
